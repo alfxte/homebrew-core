@@ -16,8 +16,8 @@ class Mpv < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.8" => :build
   depends_on :xcode => :build
-  depends_on "rubberband" => :optional
-  depends_on "jack" => :optional
+  depends_on "rubberband" => :build
+  depends_on "jack" => :build
 
   depends_on "ffmpeg"
   depends_on "jpeg"
@@ -47,6 +47,8 @@ class Mpv < Formula
       --enable-lua
       --enable-libarchive
       --enable-uchardet
+      --enable-rubberband
+      --jack
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
